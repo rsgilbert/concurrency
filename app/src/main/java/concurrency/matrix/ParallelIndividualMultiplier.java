@@ -1,0 +1,47 @@
+package concurrency.matrix;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Creates all the execution threads necessary to calculate the result matrix.
+ */
+public class ParallelIndividualMultiplier {
+    public static void multiply(
+            double[][] matrix1,
+            double[][] matrix2,
+            double[][] result) {
+        List<Thread> threads = new ArrayList<>();
+        int rows1 = matrix1.length;
+        int columns2 = matrix2[0].length;
+
+        for(int i = 0; i < rows1; i++){
+            for(int j = 0; j < columns2; j++) {
+                var task = new IndividualMultiplierTask(result, matrix1, matrix2, i, j);
+                Thread thread = new Thread(task);
+                thread.start();
+                threads.add(thread);
+
+                if(threads.size() % 10 == 0) {
+                    waitForThreads(threads);
+                }
+            }
+        }
+    }
+
+    /**
+     * Wait for the given list of threads to complete execution and terminate.
+     * @param threads list of threads to wait for
+     */
+    private static void waitForThreads(List<Thread> threads) {
+        System.out.printf("We have %1 threads\n", threads.size());
+        for(var thread: threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        threads.clear();
+    }
+}
