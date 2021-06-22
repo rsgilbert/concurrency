@@ -25,6 +25,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.0-jre")
+
+    // Add assertj library for extra testing
+    // see: https://joel-costigliola.github.io/assertj/assertj-core-quick-start.html
+    testImplementation("org.assertj:assertj-core:3.11.1")
 }
 
 application {

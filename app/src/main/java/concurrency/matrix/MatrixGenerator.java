@@ -16,7 +16,7 @@ public class MatrixGenerator {
         Random random = new Random();
         for(int i = 0; i < rows; i++) {
             for(int j = 0; j < cols; j++) {
-                ret[i][j] = random.nextDouble() * 10;
+                ret[i][j] = (int) (random.nextInt() * 10);
             }
         }
         return ret;
