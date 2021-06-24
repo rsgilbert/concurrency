@@ -20,10 +20,10 @@ class ParallelGroupFileSearchTest {
     void setUp() {
     }
 
-    @Test // Runs appr 9 s
+    @Test // Runs appr 9 s for search from root(/)
     void parallelSearchFiles() {
         // Test parallel file search
-        String startPath = "/";
+        String startPath = "/home";
         String searchWord = "feedback.zip";
         File file = new File(startPath);
         Result result = new Result();
@@ -33,7 +33,7 @@ class ParallelGroupFileSearchTest {
 
     }
 
-    @Test // Takes a very long time
+    @Test // Takes a very long time for search from root
     void serialSearchFiles() {
         // Test parallel file search
         String startPath = "/";
