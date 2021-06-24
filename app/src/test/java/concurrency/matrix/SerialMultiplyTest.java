@@ -21,7 +21,7 @@ public class SerialMultiplyTest {
     }
 
     @DisplayName("test serial multiply")
-    @Test
+    @Test // Uses appr 40 ms
     void testSerial() {
         SerialMultiplier.multiply(matrix1, matrix2, result);
         // Test Row 0

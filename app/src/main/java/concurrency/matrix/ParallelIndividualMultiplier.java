@@ -22,15 +22,15 @@ public class ParallelIndividualMultiplier {
                 var task = new IndividualMultiplierTask(result, matrix1, matrix2, i, j);
                 Thread thread = new Thread(task);
                 status = thread.getState();
-                System.out.println("thread status is " + thread.getState());
+                //System.out.println("thread status is " + thread.getState());
                 thread.start();
-                System.out.println("thread status is " + thread.getState());
+                //System.out.println("thread status is " + thread.getState());
                 status = thread.getState();
-                System.out.println(status); // termin // run
-                  System.out.printf("Thread at %d %d is %s\n", i, j, thread.getName());
+                //System.out.println(status); // termin // run
+                //  System.out.printf("Thread at %d %d is %s\n", i, j, thread.getName());
                 threads.add(thread);
 
-                System.out.println("thread status is " + thread.getState());
+                //System.out.println("thread status is " + thread.getState());
                 status = thread.getState();
 
                 if(threads.size() % 10 == 0) {
@@ -49,9 +49,9 @@ public class ParallelIndividualMultiplier {
         for(var thread: threads) {
             try {
 
-                System.out.println(thread.getState());
+               // System.out.println(thread.getState());
                 thread.join();
-                System.out.println(thread.getState());
+               // System.out.println(thread.getState());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
