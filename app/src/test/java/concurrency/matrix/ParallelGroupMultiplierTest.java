@@ -13,7 +13,6 @@ import static org.assertj.core.api.Assertions.*;
 @ExtendWith(TimingExtension.class)
 class ParallelGroupMultiplierTest {
 
-
     double[][] matrix1 = { {1, 2, 3}, {4, 5, 6} }; // 2 X 3
     double[][] matrix2 = { {5, 10}, {10, 15}, {20, 25} }; // 3 X 2
     double[][] result = new double[2][2];
@@ -45,7 +44,7 @@ class ParallelGroupMultiplierTest {
     }
 
     @DisplayName("parallel group multiplier gives correct result")
-    @Test // Takes appr 54 ms, uses only 2 threads
+    @Test // Takes appr 5g4 ms, uses only 2 threads
     void parallelGroupMultiplierIsCorrect() {
         ParallelGroupMultiplier.multiply(matrix1, matrix2, result);
         assertThat(result[0][0]).isEqualTo(cell00);
