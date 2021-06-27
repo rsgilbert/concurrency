@@ -33,11 +33,6 @@ dependencies {
 
 }
 
-application {
-    // Define the main class for the application.
-    mainClass.set("concurrency.App")
-}
-
 tasks.test {
     // Use junit platform for unit tests.
     useJUnitPlatform()
