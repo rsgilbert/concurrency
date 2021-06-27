@@ -31,6 +31,10 @@ dependencies {
     // see: https://joel-costigliola.github.io/assertj/assertj-core-quick-start.html
     testImplementation("org.assertj:assertj-core:3.11.1")
 
+
+    // CSV reader library
+    implementation("org.apache.commons:commons-csv:1.8")
+
 }
 
 tasks.test {

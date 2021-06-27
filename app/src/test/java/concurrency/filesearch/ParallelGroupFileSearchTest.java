@@ -36,7 +36,7 @@ class ParallelGroupFileSearchTest {
     @Test // Takes a very long time for search from root
     void serialSearchFiles() {
         // Test parallel file search
-        String startPath = "/";
+        String startPath = "/home";
         String searchWord = "feedback.zip";
         File file = new File(startPath);
         Result result = new Result();
